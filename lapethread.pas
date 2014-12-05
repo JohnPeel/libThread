@@ -143,7 +143,8 @@ end;
 
 initialization
   addType('TThreadID', 'PtrUInt');
-  addType('TThreadPriority', '(tpIdle, tpLowest, tpLower, tpNormal, tpHigher, tpHighest, tpTimeCritical)');
+  //Added to Simba
+  //addType('TThreadPriority', '(tpIdle, tpLowest, tpLower, tpNormal, tpHigher, tpHighest, tpTimeCritical)');
   addType('TThread', 'type TObject');
   addType('TThreadProc', 'procedure(Thread: TThread; Data: Pointer)');
 

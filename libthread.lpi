@@ -43,11 +43,10 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <AutoIncrementBuild Value="True"/>
-      <RevisionNr Value="1"/>
+      <RevisionNr Value="2"/>
       <BuildNr Value="1"/>
       <CharSet Value="04B0"/>
-      <StringTable InternalName="libThread" ProductVersion=""/>
+      <StringTable InternalName="libThread"/>
     </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="Debug" Default="True"/>
@@ -56,18 +55,13 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="dist\libThread$(TargetCPUs)"/>
+            <Filename Value="dist\libThread$(TargetCPU)"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
             <OtherUnitFiles Value="\"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
-          <Conditionals Value="if (TargetCPU = 'x86_64') then
-  TargetCPUs := '64';
-
-if (TargetCPU = 'x86') then
-  TargetCPUs := '32';"/>
           <BuildMacros>
             <Count Value="1"/>
             <Item1>
@@ -116,49 +110,39 @@ if (TargetCPU = 'x86') then
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="5">
+    <Units Count="4">
       <Unit0>
         <Filename Value="libthread.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="libthread"/>
       </Unit0>
       <Unit1>
-        <Filename Value="ethread.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="EThread"/>
-      </Unit1>
-      <Unit2>
         <Filename Value="simbaplugin.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimbaPlugin"/>
-      </Unit2>
-      <Unit3>
+      </Unit1>
+      <Unit2>
         <Filename Value="lapethread.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="LapeThread"/>
-      </Unit3>
-      <Unit4>
+      </Unit2>
+      <Unit3>
         <Filename Value="lapecriticalsection.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="LapeCriticalSection"/>
-      </Unit4>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="dist\libThread_debug$(TargetCPUs)"/>
+      <Filename Value="dist\libThread_debug$(TargetCPU)"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
-    <Conditionals Value="if (TargetCPU = 'x86_64') then
-  TargetCPUs := '64';
-
-if (TargetCPU = 'x86') then
-  TargetCPUs := '32';"/>
     <Parsing>
       <SyntaxOptions>
         <IncludeAssertionCode Value="True"/>
@@ -174,7 +158,7 @@ if (TargetCPU = 'x86') then
         <OverflowChecks Value="True"/>
         <StackChecks Value="True"/>
       </Checks>
-      <VerifyObjMethodCallValidity Value="True"/>
+	  <VerifyObjMethodCallValidity Value="True"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
